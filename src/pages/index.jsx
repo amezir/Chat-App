@@ -48,8 +48,8 @@ const Home = () => {
 
     const onConnectionError = (error) => {
         console.log(error.message);
-        localStorage.clear("username");
-        localStorage.clear("sessionID");
+        localStorage.removeItem("username");
+        localStorage.removeItem("sessionID");
         localStorage.setItem("error", 500);
         push("/login");
 
@@ -86,7 +86,7 @@ const Home = () => {
         // save the ID of the user
         socket.userID = userID;
 
-        localStorage.clear("error");
+        localStorage.removeItem("error");
     };
 
     const scrollToBottom = () => {
