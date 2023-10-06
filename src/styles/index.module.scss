@@ -1,0 +1,110 @@
+.msg {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    width: 30rem;
+    background-color: rgba(167, 139, 250);
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.msgPerso {
+    align-self: flex-end;
+    justify-content: flex-end;
+    border-radius: 20px 20px 0px 20px;
+    background-color: rgba(167, 139, 250);
+
+    time {
+        align-self: flex-end;
+    }
+}
+
+.msgAutres {
+    color: black;
+    align-self: flex-start;
+    justify-content: flex-end;
+    border-radius: 20px 20px 20px 0px;
+    background-color: #E6E6E6;
+
+    time {
+        align-self: flex-end;
+    }
+}
+
+.ctnMsg {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    gap: 0.5rem;
+    background-color: #F6F6F6;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 0.5rem;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 0.5rem;
+
+    }
+}
+
+.ctnGMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 100%;
+}
+
+.ctnPgn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+    padding-left: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    align-self: flex-start;
+    background-color: #F6F6F6;
+    color: #000000;
+    border-radius: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .ctnPgn {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}

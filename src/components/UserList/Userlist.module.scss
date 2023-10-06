@@ -1,0 +1,89 @@
+.btnBack {
+    text-align: left;
+    padding: 0.5rem;
+    background-color: rgba(167, 139, 250);
+    color: #fff;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btnBack:hover {
+    background-color: rgba(167, 139, 250, 0.8);
+}
+
+.ctnOlineList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 95%;
+    width: 20%;
+    background-color: #F6F6F6;
+    color: #000000;
+    scroll-behavior: smooth;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+.user {
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid #7d7d7d70;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    span {
+        margin-left: 4rem;
+    }
+}
+
+.user:hover {
+    color: #000000;
+    border-right: 5px solid #000000;
+}
+
+.user_active {
+    color: #000000;
+    border-right: 5px solid #000000;
+}
+
+.ctnUsers {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: 1rem;
+    color: #000000;
+    scroll-behavior: smooth;
+    padding: 0.5rem;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+}
+
+.notification {
+    background-color: #898989;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
