@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 
 import styles from '@/styles/index.module.scss';
+import { gsap } from 'gsap';
 
 import Input from '@/components/input/input';
 import Commands from '@/components/command/Commands';
@@ -14,6 +15,26 @@ import Navbar from '@/components/Navbar/Navbar';
 
 
 const Home = () => {
+
+    const title = useRef(null);
+
+    useEffect(() => {
+        gsap.from(title.current, {
+            duration: 1,
+            y: -100,
+            opacity: 0,
+            ease: "power3.out"
+        })
+
+        gsap.from(viewerRef.current, {
+            duration: 1,
+            x: 1,
+            opacity: 0,
+            ease: "power3.out"
+        })
+    }, [])
+
+
 
     const getUsernameFromLocalStorage = () => {
         if (typeof window !== 'undefined') {
@@ -217,7 +238,7 @@ const Home = () => {
                 />
 
                 <div className={styles.ctnGMsg}>
-                    <div className={styles.title}>
+                    <div className={styles.title} ref={title}>
                         <h1
                         >{selectedUser ? selectedUser.username : "Géneral"}</h1>
                     </div>

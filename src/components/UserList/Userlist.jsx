@@ -1,13 +1,21 @@
 import { useEffect } from "react";
 import style from "./Userlist.module.scss";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { useRef } from "react";
 
 const Userlist = ({ users, setSelectedUser, selectedUser, setUsers
 }) => {
 
-    useEffect(() => {
+    const userlist = useRef(null);
 
-    }, []);
+    useEffect(() => {
+        gsap.from(userlist.current, {
+            duration: 1,
+            y: -10,
+            opacity: 0,
+            ease: "power3.out"
+        })
+    }, [])
 
 
     const resetNotification = (user) => {
@@ -29,16 +37,17 @@ const Userlist = ({ users, setSelectedUser, selectedUser, setUsers
 
 
     return (
-        <div className={style.ctnOlineList}>
+        <div ref={userlist}
+            className={style.ctnOlineList}>
             <div>
                 <p>Global message</p>
                 <button className={style.btnBack} onClick={() => setSelectedUser(null)}>
                     Chat Générale</button>
             </div>
-            <p>Online users
-            </p>
             <div className={style.ctnUsers}
             >
+                <p>Online users
+                </p>
                 {users.map((user, key) => {
                     return user.connected ? <div key={key} onClick={() => { setSelectedUser(user); resetNotification(user); }
                     } className={`${style.user} ${selectedUser?.userID === user.userID ? style.user_active : ""}`}

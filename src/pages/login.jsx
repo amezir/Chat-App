@@ -2,8 +2,20 @@ import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import style from "../styles/login.module.scss";
+import { gsap } from "gsap";
 
 const Login = () => {
+
+    const login = useRef(null);
+
+    useEffect(() => {
+        gsap.from(login.current, {
+            duration: 1,
+            y: 100,
+            opacity: 0,
+            ease: "back.out(1.7)"
+        })
+    }, [])
 
     const [error, setError] = useState("");
 
@@ -37,8 +49,9 @@ const Login = () => {
     }, []);
 
     return (
-        <div className={style.ctn}>
-            <div className={style.frm}>
+        <div
+            className={style.ctn}>
+            <div className={style.frm} ref={login}>
                 <div>
                     <h1 className={style.title}>Login</h1>
                 </div>

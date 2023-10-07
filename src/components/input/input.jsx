@@ -1,9 +1,22 @@
 import { socket } from "@/utils/socket"
 import { useRef } from "react"
+import { useEffect } from "react"
+import { gsap } from "gsap"
 
 import styles from "./input.module.scss"
 
 const input = ({ selectedUser, setSelectedUser }) => {
+
+    const input = useRef(null);
+
+    useEffect(() => {
+        gsap.from(input.current, {
+            duration: 1,
+            y: 10,
+            opacity: 0,
+            ease: "power3.out"
+        })
+    }, [])
 
     const inputRef = useRef();
 
@@ -41,7 +54,7 @@ const input = ({ selectedUser, setSelectedUser }) => {
 
     return (
 
-        <div className={styles.inputGroup}>
+        <div className={styles.inputGroup} ref={input}>
             <input ref={inputRef} type="text" onKeyDown={onKeyDown} placeholder="Write messages..." maxLength="230" />
         </div>
     )
