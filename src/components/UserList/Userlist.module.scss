@@ -37,8 +37,27 @@
     margin-bottom: 0.5rem;
 
     span {
-        margin-left: 4rem;
+        margin-left: 0.5rem;
+        animation-duration: .8s;
+        animation-name: clignoter;
+        animation-iteration-count: infinite;
+        transition: none;
     }
+
+    @keyframes clignoter {
+        0% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
 }
 
 .user:hover {
@@ -82,7 +101,7 @@
 }
 
 .notification {
-    background-color: #898989;
+    background-color: rgba(167, 139, 250, 0.8);
     width: 10px;
     height: 10px;
     display: inline-block;
@@ -144,5 +163,11 @@
 .username {
     font-size: 20px;
     font-weight: 600;
+    color: #010019;
+}
+
+.userInfo {
+    font-size: 15px;
+    font-weight: 100;
     color: #010019;
 }

@@ -165,11 +165,6 @@ const Home = () => {
 
     };
 
-    const emitmessagewhitsong = () => {
-        socket.emit("command", "/chef");
-    };
-
-
     useEffect(() => {
         scrollToBottom();
     }, [messages, selectedUser]);
@@ -259,10 +254,12 @@ const Home = () => {
                                 return (
                                     <div key={key} className={`${styles.msg} ${message.username === username ? styles.msgPerso : styles.msgAutres}
                                     `}>
-                                        <h4>{message.username}</h4>
+                                        <div className={styles.ctnMsgInfo}
+                                        ><h4>{message.username}</h4>
+                                            <time> {daySetMessage()}&nbsp;
+                                                {timeSetMessage()}</time></div>
+
                                         <p>{message.content}</p>
-                                        <time> {daySetMessage()}&nbsp;
-                                            {timeSetMessage()}</time>
                                     </div>
                                 );
                             })}
@@ -280,9 +277,6 @@ const Home = () => {
                         setSelectedUser={setSelectedUser}
                     />
                 </div>
-
-
-
             </div>
             <Commands />
         </>

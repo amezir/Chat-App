@@ -4,6 +4,7 @@ import { useState } from "react";
 import style from "../styles/login.module.scss";
 import { gsap } from "gsap";
 
+
 const Login = () => {
 
     const login = useRef(null);
@@ -49,21 +50,23 @@ const Login = () => {
     }, []);
 
     return (
-        <div
-            className={style.ctn}>
-            <div className={style.frm} ref={login}>
-                <div>
-                    <h1 className={style.title}>Login</h1>
-                </div>
-                <div className={style.inputGroup}>
-                    <label>Username</label>
-                    <input ref={inputRef} type="text" placeholder="Amézir" onKeyDown={onKeyDown} maxLength="14" />
-                </div>
-                <div>
-                    {displayError()}
+        <>
+            <div
+                className={style.ctn}>
+                <div className={style.frm} ref={login}>
+                    <div>
+                        <h1 className={style.title}>Login</h1>
+                    </div>
+                    <div className={style.inputGroup}>
+                        <label>Username</label>
+                        <input ref={inputRef} type="text" placeholder="Amézir" onKeyDown={onKeyDown} maxLength="14" />
+                    </div>
+                    <div>
+                        {displayError()}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

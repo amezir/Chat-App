@@ -12,6 +12,25 @@
     word-break: break-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
+
+    time {
+        display: none;
+    }
+
+}
+
+.msg:hover {
+    time {
+        display: block;
+    }
+}
+
+.ctnMsgInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .msgPerso {

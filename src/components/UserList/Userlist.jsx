@@ -6,7 +6,6 @@ import { useRef } from "react";
 const Userlist = ({ users, setSelectedUser, selectedUser, setUsers
 }) => {
 
-
     const getFirstLetter = (username) => {
         if (username) {
             return username.charAt(0).toUpperCase();
@@ -55,7 +54,7 @@ const Userlist = ({ users, setSelectedUser, selectedUser, setUsers
     return (
         <div ref={userlist} className={style.ctnOlineList}>
             <div className={style.ctnGlobal}>
-                <div className={style.usernamelogo}> {getFirstLetter(getUsername())}
+                <div className={style.usernamelogo}> <p>{getFirstLetter(getUsername())} </p>
                 </div>
                 <div>
                     <p className={style.username}
@@ -79,9 +78,10 @@ const Userlist = ({ users, setSelectedUser, selectedUser, setUsers
                         >
                             <p>{getFirstLetter(user.username)}</p>
                         </div>
-                        <div>
-                            <h3> &nbsp;
-                                {user.username}</h3>
+                        <div className={style.userInfo}
+                        >
+                            <p> &nbsp;
+                                {user.username}</p>
                         </div>
 
                         {user.hasNewMessages ? (<span className={style.notification}></span>) : null}
