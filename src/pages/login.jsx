@@ -57,7 +57,7 @@ const Login = () => {
                 </div>
                 <div className={style.inputGroup}>
                     <label>Username</label>
-                    <input ref={inputRef} type="text" placeholder="Amézir" onKeyDown={onKeyDown} maxLength="20" />
+                    <input ref={inputRef} type="text" placeholder="Amézir" onKeyDown={onKeyDown} maxLength="14" />
                 </div>
                 <div>
                     {displayError()}

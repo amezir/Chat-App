@@ -240,7 +240,7 @@ const Home = () => {
                 <div className={styles.ctnGMsg}>
                     <div className={styles.title} ref={title}>
                         <h1
-                        >{selectedUser ? selectedUser.username : "Géneral"}</h1>
+                        >{selectedUser ? selectedUser.username : "General"}</h1>
                     </div>
                     <div ref={viewerRef} className={styles.ctnMsg}>
                         {selectedUser
