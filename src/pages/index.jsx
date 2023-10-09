@@ -106,8 +106,6 @@ const Home = () => {
         localStorage.setItem("sessionID", sessionID);
         // save the ID of the user
         socket.userID = userID;
-
-        localStorage.removeItem("error");
     };
 
     const scrollToBottom = () => {
